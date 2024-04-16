@@ -20,7 +20,7 @@ mira: big.o cmbnms.o data.o lex.o reduce.o steer.o trans.o types.o y.tab.o \
 			    version.c miralib/.version Makefile .host
 	$(CC) $(CFLAGS) -DVERS=`cat miralib/.version` \
         -DVDATE="\"`git show -s --format=%cd --date=format:'%d %b %Y'`\"" \
-		-DHOST="`cat .host`" version.c cmbnms.o y.tab.o data.o lex.o \
+		-DHOST="" version.c cmbnms.o y.tab.o data.o lex.o \
 	    big.o reduce.o steer.o trans.o types.o -lm -o mira
 	strip mira$(EX)
 .host:
